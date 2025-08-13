@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.internship-section {
+  max-width: 100%;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111;
+  text-align: center;
+  padding: 4rem;
+  
+  
+}
+
+.internship-section p {
+    
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 2;
+  margin-right: 5rem;
+  margin-left: 6rem;
+  
+
+}
+
+.internship-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-left: 23rem;
+  margin-top: 3rem;
+}
+
+.internship-list li {
+  margin: 20px 0;
+  text-align: center;
+
+}
+
+.internship-list li a {
+  color: #060607;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+}
+
+.internship-list li a:hover {
+  text-decoration: underline;
+  color: rgb(19, 165, 244);
+}
+
+.apply-button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.apply-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  margin-bottom: 4rem;
+}
+
+.apply-btn:hover {
+  background-color: #0056b3;
+}
+
+.success-msg {
+  color: green;
+  background-color: #e0ffe0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: red;
+  background-color: #ffe0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-status {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-status.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.form-status.pending {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+}

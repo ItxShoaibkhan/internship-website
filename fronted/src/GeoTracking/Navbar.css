@@ -1,0 +1,106 @@
+Dark blue navbar background
+.custom-navbar {
+  background-color: #060e28; /* matches your screenshot */
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.95rem;
+  height: 6rem;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+/* Logo image tweaks if needed */
+.navbar-brand img {
+  height: 4rem;
+}
+/* Hover-enabled dropdown for Geotracking */
+.custom-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style the dropdown menu (blue box look) */
+.show-on-hover {
+  background-color: #49B6E9; /* light blue background */
+  border: none;
+  margin-top: 0;
+  padding: 0;
+  min-width: 280px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style each dropdown item */
+.custom-item {
+  color: #000; /* black text */
+  padding: 12px 16px;
+  background-color: #49B6E9;
+  border-bottom: 1px solid #ffffff30;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+
+.custom-item:hover {
+  background-color: #2eaad9; /* darker blue on hover */
+  /* color: #fff; */
+}
+
+/* Background for custom navbar */
+.custom-navbar {
+  background-color: #001f4d; /* dark navy */
+}
+
+/* Blue dropdown background */
+.b-blue {
+  background-color: #003366 !important;
+  border-radius: 0.25rem;
+  min-width: 250px;
+  padding: 0.5rem 0;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown items */
+.b-blue .dropdown-item {
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+/* Hover effect */
+.b-blue .dropdown-item:hover {
+  background-color: #00509e;
+  color: #fff;
+}
+
+/* Contact button */
+.nav-item .contact-btn {
+  background-color: #00509e;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+
+
+/* Optional: Hover dropdown if you want it open on mouseover */
+.custom-dropdown:hover .dropdown-menu {
+  display: block;
+}

@@ -1,0 +1,57 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.crr-hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url("/public/image/photo46.jpeg") center/cover no-repeat;
+  /* min-height: 100vh; */
+  height: 300px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: left;
+  
+}
+
+.internship-section {
+  background-color: #ffffff;
+}
+
+.internship-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.highlight {
+  display: block;
+  font-weight: 900;
+}
+
+.internship-list {
+  max-width: 600px;
+}
+
+.internship-item {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.checkmark {
+  color: #1d4ed8;
+  font-size: 1.3rem;
+}
+
+.internship-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.internship-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}

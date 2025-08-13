@@ -1,0 +1,287 @@
+/* General resets and base */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.heros-section {
+  background: url('/public/image/photo26.webp') center center/cover no-repeat;
+  min-height: 80vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+}
+
+.heros-section h1,
+.heros-section p {
+  color: #fff;
+}
+
+.heros-section .btn {
+  background-color: #0d6efd;
+  border: none;
+}
+
+/* Core Info Section */
+.gps-info-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.gps-info-section h2 {
+  color: #0d6efd;
+}
+
+.core-columns {
+  padding: 3rem 1rem;
+  gap: 2rem;
+}
+
+.core-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.core-box h3 {
+  margin-bottom: 1rem;
+  color: #0d6efd;
+}
+
+.core-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.core-box li {
+  margin-bottom: 1rem;
+}
+
+/* Key Features */
+.key-features-section {
+  background-color: #e9f1ff;
+}
+
+.features-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-title {
+  color: #0d6efd;
+}
+
+.features-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.rtls-image img{
+ width: 500px;
+  height: 800px;
+  border-radius: 12px;
+  margin-top: -13rem;
+  margin-left: 1rem;
+  text-decoration: none;
+ background-color: transparent;
+ overflow: hidden;
+ object-fit: contain;
+ gap: 40px;
+
+}
+
+.rtls1-image img{
+ width: 550px;
+  height: 800px;
+  border-radius: 12px;
+  margin-top: -35rem;
+  margin-left: 36rem;
+  text-decoration: none;
+ background-color: transparent;
+ overflow: hidden;
+ object-fit: contain;
+ gap: 40px;
+
+}
+
+.rtls2-image img{
+ width: 500px;
+  height: 800px;
+  border-radius: 12px;
+  margin-top: -30rem;
+  margin-left: 40rem;
+  text-decoration: none;
+ background-color: transparent;
+ overflow: hidden;
+ object-fit: contain;
+ gap: 40px;
+
+}
+
+.rtls3-image img{
+ width: 500px;
+  height: 800px;
+  border-radius: 12px;
+  margin-top: -10rem;
+  margin-left: 1rem;
+  text-decoration: none;
+ background-color: transparent;
+ overflow: hidden;
+ object-fit: contain;
+ gap: 40px;
+
+}
+
+/* Integration Section */
+.integration-section {
+  background-color: #fefefe;
+}
+
+.integration-title {
+  color: #0d6efd;
+}
+
+.integration-content ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+/* Benefits */
+.benefits-section {
+  background-color: #f2f6fc;
+  padding: 3rem 1rem;
+}
+
+.benefits-section h2 {
+  color: #0d6efd;
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: square;
+  font-size: 1.05rem;
+}
+
+/* Use Cases */
+.use-cases-section {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+}
+
+.use-cases-list li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.use-cases-list h6 {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Industries */
+.industries-sections {
+  background-color: #f9fbfd;
+  padding: 3rem 1rem;
+}
+
+.industries-sections h2 {
+  color: #0d6efd;
+  margin-bottom: 2rem;
+}
+
+.industries-lists {
+  font-size: 1.1rem;
+  list-style: none;
+}
+
+/* Case Studies */
+.case-studies-section {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+}
+
+.case-box h3 {
+  color: #0d6efd;
+}
+
+.case-box p {
+  color: #555;
+}
+
+.case-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Standards */
+.standards-sections {
+  background-color: #edf3fb;
+  padding: 3rem 1rem;
+}
+
+.standards-sections h2 {
+  color: #0d6efd;
+  margin-bottom: 2rem;
+}
+
+.standards-lists {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.standards-lists ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.standards-lists li {
+  font-size: 1.05rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #87a9da;
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contact-button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #fff;
+  color: #0d6efd;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #e0e0e0;
+  color: #0a58ca;
+}
+
+/* Shared Utility Classes */
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: #0d6efd;
+  margin: 1rem auto;
+}
+
+.highlight {
+  color: #ffc107;
+  font-weight: 600;
+}

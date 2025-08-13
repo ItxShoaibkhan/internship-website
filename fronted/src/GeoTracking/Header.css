@@ -1,0 +1,22 @@
+.hero-header {
+  height: 100vh;
+
+
+  position: relative;
+  z-index: 1;
+}
+
+.hero-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-header .container {
+  z-index: 2;
+  position: relative;
+}
