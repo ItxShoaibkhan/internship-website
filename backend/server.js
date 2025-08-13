@@ -5,7 +5,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
-import db from "./db.js";
+import connection from "./db.js"
 
 dotenv.config();
 const app = express();

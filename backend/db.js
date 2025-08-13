@@ -1,20 +1,25 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
+
 dotenv.config();
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+// If running locally, use LOCAL_ variables, else use Railway's
+const isLocal = process.env.NODE_ENV !== "production";
+
+const connection = mysql.createConnection({
+  host: isLocal ? process.env.LOCAL_MYSQLHOST : process.env.MYSQLHOST,
+  user: isLocal ? process.env.LOCAL_MYSQLUSER : process.env.MYSQLUSER,
+  password: isLocal ? process.env.LOCAL_MYSQLPASSWORD : process.env.MYSQLPASSWORD,
+  database: isLocal ? process.env.LOCAL_MYSQLDATABASE : process.env.MYSQLDATABASE,
+  port: isLocal ? process.env.LOCAL_MYSQLPORT : process.env.MYSQLPORT
 });
 
-db.connect((err) => {
+connection.connect((err) => {
   if (err) {
-    console.error("MySQL connection failed:", err);
+    console.error("❌ Database connection failed:", err);
   } else {
-    console.log("MySQL connected.");
+    console.log("✅ Connected to MySQL database");
   }
 });
 
-export default db;
+export default connection;
