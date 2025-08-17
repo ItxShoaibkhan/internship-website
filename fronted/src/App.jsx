@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-import Navbar from "./GeoTracking/Navbar.jsx";
+import Navbar from "./GeoTracking/Navbar";
 import Header from "./GeoTracking/header";
 import Footer from "./GeoTracking/footer";
 import Body from "./GeoTracking/Body";
