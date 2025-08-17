@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from "axios";
+import { db } from '../firebase';
+import { ref, push } from 'firebase/database';
 import './standardform.css';
+
 
 const AIForm = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +24,6 @@ const AIForm = () => {
     } else {
       setFormData({ ...formData, [name]: value });
     }
-    // Clear messages when user starts typing again
     setMessage('');
     setError('');
   };
@@ -29,21 +31,19 @@ const AIForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.fullName || !formData.email || !formData.country || !formData.position || !formData.resume) {
+    if (!formData.fullName || !formData.email || !formData.country || !formData.position) {
       setError("⚠️ All fields are required.");
       return;
     }
 
-    const payload = new FormData();
-    for (let key in formData) {
-      payload.append(key, formData[key]);
-    }
-
     try {
-      await axios.post('http://localhost:5000/api/apply', payload, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      // Save form data to Firebase Realtime Database
+      await push(ref(db, "AI_applications"), {
+        fullName: formData.fullName,
+        email: formData.email,
+        country: formData.country,
+        position: formData.position,
+        resume: formData.resume ? formData.resume.name : "No file uploaded"
       });
 
       setMessage("✅ Application submitted successfully!");
@@ -65,7 +65,6 @@ const AIForm = () => {
     <div className="form-container">
       <h2 className="form-title">Complete the form below to apply and get started!</h2>
 
-      {/* Feedback messages */}
       {message && <div className="success-msg">{message}</div>}
       {error && <div className="error-msg">{error}</div>}
 
@@ -88,7 +87,7 @@ const AIForm = () => {
         <div className="form-group">
           <label htmlFor="position">Applying for Position*</label>
           <select id="position" name="position" value={formData.position} onChange={handleChange} required>
-             <option value="">—Please choose an option—</option>
+            <option value="">—Please choose an option—</option>
             <option value="ai-content">AI-Enhanced Web Content Specialist Intern</option>
             <option value="video-ai">Creative Video & AI Automation Intern</option>
             <option value="ai-talent">AI Talent Acquisition Specialist</option>
@@ -103,7 +102,6 @@ const AIForm = () => {
             <option value="seo-marketing">AI-driven SEO & Marketing Internship</option>
             <option value="market-leads">AI-driven Market Insights & Lead Generation Intern</option>
             <option value="hr-partner">HR Partner-Recruitment Intern</option>
-          
           </select>
         </div>
 

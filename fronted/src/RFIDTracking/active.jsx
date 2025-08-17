@@ -10,9 +10,12 @@ export default function Active() {
     <div className="row">
       {/* Left Text Column */}
       <div className="col-md-8 col-lg-6">
-        <h1 className="display-4 fw-bold mb-4 text-start m-lg-0 text-white ">
-          Smart People Tracking with Active RFID Technology
-        </h1>
+      <h1 className="display-4 fw-bold text-white text-start">
+  Smart People Tracking
+  with  Active RFID
+  Technology
+</h1>
+
         
         <a href="/contact-us" className="gps-btn">
           CONTACT US

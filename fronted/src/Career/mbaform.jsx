@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './standardform.css';
+import { db } from '../firebase';
+import { ref, push } from 'firebase/database';
 
 const MbaForm = () => {
   const [status, setStatus] = useState("");
-  const [statusType, setStatusType] = useState(""); // 'success', 'error', or ''
+  const [statusType, setStatusType] = useState(""); // 'success', 'error', or 'pending'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,27 +13,38 @@ const MbaForm = () => {
     setStatusType("pending");
 
     const form = e.target;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+
+    // Convert resume file to Base64
+    const file = formData.get("resume");
+    let resumeBase64 = "";
+    if (file && file.size > 0) {
+      resumeBase64 = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (err) => reject(err);
+        reader.readAsDataURL(file);
+      });
+    }
 
     try {
-      const res = await fetch("http://localhost:5000/api/apply", {
-        method: "POST",
-        body: data,
+      // Push data to Firebase Realtime Database
+      const contactRef = ref(db, "mba_applications");
+      await push(contactRef, {
+        fullName: formData.get("fullName"),
+        email: formData.get("email"),
+        country: formData.get("country"),
+        position: formData.get("position"),
+        resume: resumeBase64,
+        createdAt: Date.now(),
       });
 
-      const result = await res.json();
-
-      if (res.ok) {
-        setStatus("✅ Application submitted successfully!");
-        setStatusType("success");
-        form.reset();
-      } else {
-        setStatus(result.message || "❌ Something went wrong.");
-        setStatusType("error");
-      }
+      setStatus("✅ Application submitted successfully!");
+      setStatusType("success");
+      form.reset();
     } catch (err) {
       console.error(err);
-      setStatus("❌ Error submitting form.");
+      setStatus("❌ Failed to save application.");
       setStatusType("error");
     }
   };

@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./GeoTracking/navbar";
+
+import Navbar from "./GeoTracking/Navbar.jsx";
 import Header from "./GeoTracking/header";
 import Footer from "./GeoTracking/footer";
-import Body from "./GeoTracking/Body"
+import Body from "./GeoTracking/Body";
 import GpsTrackingHero from "./GeoTracking/GPSTracking";
 import UltraWideBand from "./GeoTracking/UWB";
 import Wifi from "./GeoTracking/wifi";
@@ -63,25 +63,24 @@ import PoweredIntern from "./Career/ai-powered-email-intern";
 import AiDrivenSEOIntern from "./Career/ai-driven-seo-intern";
 import AILeadIntern from "./Career/ai-driven-lead-intern";
 import HrPartnerIntern from "./Career/hr-partner-intern";
-
-
 function App() {
   return (
     <Router>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={
-          <>
-            <Header />
-            <Body />
-            <Footer />
-          </>
-        } />
-     
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Body />
+              <Footer />
+            </>
+          }
+        />
 
-
-<Route
+        <Route
           path="/location-based-tracking-technologies"
           element={
             <>
@@ -90,7 +89,6 @@ function App() {
             </>
           }
         />
-      
 
         <Route
           path="/location-based-tracking-technologies/gps-global-positioning-system"
@@ -110,7 +108,7 @@ function App() {
             </>
           }
         />
-         <Route
+        <Route
           path="/location-based-tracking-technologies/wi-fi-positioning"
           element={
             <>
@@ -119,7 +117,7 @@ function App() {
             </>
           }
         />
-         <Route
+        <Route
           path="/location-based-tracking-technologies/bluetooth-low-energy-ble"
           element={
             <>
@@ -128,7 +126,7 @@ function App() {
             </>
           }
         />
-         <Route
+        <Route
           path="/location-based-tracking-technologies/zigbee"
           element={
             <>
@@ -141,7 +139,7 @@ function App() {
           path="/location-based-tracking-technologies/cellular-network-based-tracking"
           element={
             <>
-              <CellularNetwork/>
+              <CellularNetwork />
               <Footer />
             </>
           }
@@ -151,37 +149,37 @@ function App() {
           path="/radio-frequency-identification-and-releted-technologies-rfid"
           element={
             <>
-              <Rfid/>
+              <Rfid />
               <Footer />
             </>
           }
         />
 
-         <Route
+        <Route
           path="/radio-frequency-identification-and-releted-technologies-rfid/active-rfid"
           element={
             <>
-              <Active/>
+              <Active />
               <Footer />
             </>
           }
         />
 
-             <Route
+        <Route
           path="/radio-frequency-identification-and-releted-technologies-rfid/passive-rfid"
           element={
             <>
-              <Passive/>
+              <Passive />
               <Footer />
             </>
           }
         />
 
-    <Route
+        <Route
           path="/radio-frequency-identification-and-releted-technologies-rfid/near-field-communication-nfc"
           element={
             <>
-              <Nfc/>
+              <Nfc />
               <Footer />
             </>
           }
@@ -191,507 +189,456 @@ function App() {
           path="/radio-frequency-identification-and-releted-technologies-rfid/real-time-location-systems-rtls"
           element={
             <>
-              <Rtls/>
+              <Rtls />
               <Footer />
             </>
           }
         />
-         <Route
+        <Route
           path="/radio-frequency-identification-and-releted-technologies-rfid/rfid-wristbands-bands"
           element={
             <>
-              <RfidBands/>
+              <RfidBands />
               <Footer />
             </>
           }
         />
 
-           <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies"
           element={
             <>
-              <Bio/>
+              <Bio />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/smart-wearables-smartwatches-fitness-trackers"
           element={
             <>
-              <Sensor/>
+              <Sensor />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/accelerometer-based-tracking"
           element={
             <>
-              <Accelerometer/>
+              <Accelerometer />
               <Footer />
             </>
           }
         />
 
-        
-          <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/gyroscope-based-tracking"
           element={
             <>
-              <Gyro/>
+              <Gyro />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/smart-shoes"
           element={
             <>
-              <Smart/>
+              <Smart />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/infrared-sensors"
           element={
             <>
-              <Infrared/>
+              <Infrared />
               <Footer />
             </>
           }
         />
 
-   <Route
-              
+        <Route
           path="/sensor-and-wearable-based-tracking-technologies/ultrasonic-positioning-systems"
           element={
             <>
-              <Ultrasonic/>
+              <Ultrasonic />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/about-us"
           element={
             <>
-              <About/>
+              <About />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/career"
           element={
             <>
-              <Career/>
+              <Career />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/career/standard-internship-positions"
           element={
             <>
-              <Standard/>
+              <Standard />
               <Footer />
             </>
           }
         />
 
-           <Route
-              
+        <Route
           path="/career/mba-masters-internship-positions"
           element={
             <>
-              <MBA/>
+              <MBA />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/career/ai-enhanced-internship-opportunities"
           element={
             <>
-              <AI/>
+              <AI />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/career/ai-enhanced-internship-opportunities/applyforinternship"
           element={
             <>
-              <ApplicationForm/>
+              <ApplicationForm />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/career/mba-masters-internship-positions/applyMBAIntership"
           element={
             <>
-              <MbaForm/>
+              <MbaForm />
               <Footer />
             </>
           }
         />
 
         <Route
-              
           path="/career/mba-masters-internship-positions/applyAIIntership"
           element={
             <>
-              <AIForm/>
+              <AIForm />
               <Footer />
             </>
           }
         />
 
-<Route
-              
+        <Route
           path="/market-research-product-acquisition-intern"
           element={
             <>
-              <MarketIntern/>
+              <MarketIntern />
               <Footer />
             </>
           }
         />
 
         <Route
-              
           path="/hr-administration-recruitment-intern"
           element={
             <>
-              <HRIntern/>
+              <HRIntern />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/market-intelligence-lead-discovery-intern"
           element={
             <>
-              <IntelligenceIntern/>
+              <IntelligenceIntern />
               <Footer />
             </>
           }
         />
- <Route
-              
+        <Route
           path="/wordpress-web-development"
           element={
             <>
-              <WordpressIntern/>
+              <WordpressIntern />
               <Footer />
             </>
           }
         />
-<Route
-              
+        <Route
           path="/digital-graphics-visual-media-intern"
           element={
             <>
-              <DigitalIntern/>
+              <DigitalIntern />
               <Footer />
             </>
           }
         />
 
         <Route
-              
           path="/creative-video-design-intern"
           element={
             <>
-              <CreativeIntern/>
-              <Footer />
-            </>
-          }
-        />
-          <Route
-              
-          path="/online-marketing-strategy-intern"
-          element={
-            <>
-              <OnlineIntern/>
-              <Footer />
-            </>
-          }
-        />
-
-         <Route
-              
-          path="/ai-assisted-tech-content-writing"
-          element={
-            <>
-              <AIAssistedIntern/>
-              <Footer />
-            </>
-          }
-        />
-
-         <Route
-              
-          path="/web-content-management-intern"
-          element={
-            <>
-              <WebContentIntern/>
-              <Footer />
-            </>
-          }
-        />
-
-         <Route
-              
-          path="/email-campaign-management-intern"
-          element={
-            <>
-              <EmailIntern/>
+              <CreativeIntern />
               <Footer />
             </>
           }
         />
         <Route
-              
+          path="/online-marketing-strategy-intern"
+          element={
+            <>
+              <OnlineIntern />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/ai-assisted-tech-content-writing"
+          element={
+            <>
+              <AIAssistedIntern />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/web-content-management-intern"
+          element={
+            <>
+              <WebContentIntern />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/email-campaign-management-intern"
+          element={
+            <>
+              <EmailIntern />
+              <Footer />
+            </>
+          }
+        />
+        <Route
           path="/online-marketing-seo-analyst-intern"
           element={
             <>
-              <SEOIntern/>
+              <SEOIntern />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/lead-acquisition-market-insights-intern"
           element={
             <>
-              <LeadIntern/>
+              <LeadIntern />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/talent-recruitment-hr-strategy-intern"
           element={
             <>
-              <TalentIntern/>
+              <TalentIntern />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/strategic-hiring-hr-partnership"
           element={
             <>
-              <StratagicIntern/>
+              <StratagicIntern />
               <Footer />
             </>
           }
         />
-            <Route
-              
+        <Route
           path="/ai-enhanced-web-content-specialist-intern"
           element={
             <>
-              <AIEnchancedIntern/>
+              <AIEnchancedIntern />
               <Footer />
             </>
           }
         />
 
-           <Route
-              
+        <Route
           path="/creative-video-ai-automation-intern"
           element={
             <>
-              <CreativeAIIntern/>
+              <CreativeAIIntern />
               <Footer />
             </>
           }
         />
 
-              <Route
-              
+        <Route
           path="/ai-talent-acquisition-specialist"
           element={
             <>
-              <AITalentIntern/>
+              <AITalentIntern />
               <Footer />
             </>
           }
         />
 
-             <Route
-              
+        <Route
           path="/ai-driven-product-sourcing-specialist"
           element={
             <>
-              <AIDrivenIntern/>
+              <AIDrivenIntern />
               <Footer />
             </>
           }
-
         />
 
-         <Route
-              
+        <Route
           path="/generative-ai-product-content-creato"
           element={
             <>
-              <GenerativeIntern/>
+              <GenerativeIntern />
               <Footer />
             </>
           }
         />
 
-           <Route
-              
+        <Route
           path="/ai-graphics-visual-communication-intern"
           element={
             <>
-              <GragphicsIntern/>
+              <GragphicsIntern />
               <Footer />
             </>
           }
         />
-          <Route
-              
+        <Route
           path="/ai-augmented-wordpress-web-develope"
           element={
             <>
-              <AugmentedIntern/>
+              <AugmentedIntern />
               <Footer />
             </>
           }
         />
 
-           <Route
-              
+        <Route
           path="/ai-driven-business-partnerships-intern"
           element={
             <>
-              <PartnershipsIntern/>
+              <PartnershipsIntern />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/ai-driven-technical-writing-intern"
           element={
             <>
-              <TechnicalIntern/>
+              <TechnicalIntern />
               <Footer />
             </>
           }
         />
-         <Route
-              
+        <Route
           path="/ai-based-content-creation-research-internship"
           element={
             <>
-              <ResearchIntern/>
+              <ResearchIntern />
               <Footer />
             </>
           }
         />
 
-         <Route
-              
+        <Route
           path="/ai-powered-email-marketing-campaigns"
           element={
             <>
-              <PoweredIntern/>
+              <PoweredIntern />
               <Footer />
             </>
           }
         />
 
-          <Route
-              
+        <Route
           path="/ai-driven-seo-marketing-internship"
           element={
             <>
-              <AiDrivenSEOIntern/>
+              <AiDrivenSEOIntern />
               <Footer />
             </>
           }
         />
-             <Route
-              
+        <Route
           path="/ai-driven-market-insights-lead-generation-intern"
           element={
             <>
-              <AILeadIntern/>
+              <AILeadIntern />
               <Footer />
             </>
           }
         />
 
-              <Route
-              
+        <Route
           path="/hr-partner-recruitment-intern"
           element={
             <>
-              <HrPartnerIntern/>
+              <HrPartnerIntern />
               <Footer />
             </>
           }
         />
 
-
-
-
-
-
-      <Route
-  path="/contact-us"
-  element={
-    <>
-      <Contact />
-      <Footer />
-    </>
-  }
-/>
+        <Route
+          path="/contact-us"
+          element={
+            <>
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
-  
     </Router>
-    
   );
 }
 
 export default App;
+

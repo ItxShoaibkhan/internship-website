@@ -10,12 +10,12 @@ const GeoTracking = () => {
       <div className="hero">
         <div className="overlay">
           <div className="hero-content">
-            <h1>
+            <h1 className='text-start text-gray'>
               LOCATION-BASED TRACKING<br />
               TECHNOLOGIES FOR PEOPLE<br />
               TRACKING
             </h1>
-            <a href="/contact-us" className="cta-button">
+            <a href="/contact-us" className="gps-btn">
               CONTACT US
             </a>
           </div>
@@ -118,21 +118,18 @@ const GeoTracking = () => {
         </div>
       </div>
     </section>
+    <section class="contact-section">
     <div className="contact-content">
   <h2>CONTACT US</h2>
 
-  <h6>Ready to implement a Zigbee-based location tracking system tailored to your environment?</h6>
+  <h6 className='text-start'>Ready to implement a Zigbee-based location tracking system tailored to your environment?</h6>
   
-  <p>
-    <a href="/contact-us" className="highlight">Contact iPeople Tracking </a>
-    to schedule a consultation, learn more about our solutions, or speak with a specialist about your tracking needs.
-  </p>
 
   <a href="/contact-us" className="contact-button">
     CONTACT US <span className="arrow">→</span>
   </a>
 </div>
-
+</section>
     </>
   );
 };

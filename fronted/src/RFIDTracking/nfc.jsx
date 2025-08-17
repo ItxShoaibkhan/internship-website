@@ -10,7 +10,7 @@ export default function Nfc() {
     <div className="row">
       {/* Left Text Column */}
       <div className="col-md-8 col-lg-6">
-        <h1 className="display-4 fw-bold mb-4 text-start">
+        <h1 className="display-4 fw-bold  text-start">
 Smart Tracking with NFC-Based RFID        </h1>
        
         <a href="/contact-us" className="gps-btn">

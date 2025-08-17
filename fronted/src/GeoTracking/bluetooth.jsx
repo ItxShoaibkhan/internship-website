@@ -11,7 +11,7 @@ export default function Bluetooth() {
       
       {/* Left Text Column */}
       <div className="col-md-6 p-5 d-flex flex-column justify-content-center text-dark">
-        <h1 className="fw-bold mb-4 text-white">
+        <h1 className="fw-bold mb-4 text-white text-start">
          Bluetooth Low Energy (BLE) for People Tracking
         </h1>
        

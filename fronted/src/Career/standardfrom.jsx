@@ -1,4 +1,8 @@
+// ApplicationForm.jsx
 import React, { useState } from 'react';
+import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ref, push } from 'firebase/database';
+import { db, storage } from '../firebase'; // make sure firebase.js exports db and storage
 import './standardform.css';
 
 const ApplicationForm = () => {
@@ -13,40 +17,45 @@ const ApplicationForm = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: files ? files[0] : value,
     }));
-
     setMessage('');
     setError('');
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const form = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      if (!value) return setError('⚠️ All fields are required.');
-      form.append(key, value);
-    });
+    const { fullName, email, country, position, resume } = formData;
+
+    // Validate all fields
+    if (!fullName || !email || !country || !position || !resume) {
+      setError('⚠️ All fields are required.');
+      return;
+    }
+
+    setMessage('Submitting...');
+    setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/apply', {
-        method: 'POST',
-        body: form,
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Server error');
-      }
+      // Upload resume to Firebase Storage
+       await push(ref(db, "Standard_applications"), {
+             fullName: formData.fullName,
+             email: formData.email,
+             country: formData.country,
+             position: formData.position,
+             resume: formData.resume ? formData.resume.name : "No file uploaded"
+           });
 
       setMessage('✅ Application submitted successfully!');
       setError('');
+      
       // Reset form
       setFormData({
         fullName: '',
@@ -55,10 +64,10 @@ const ApplicationForm = () => {
         position: '',
         resume: null,
       });
-      document.getElementById('resume').value = ''; // manually clear file input
+      document.getElementById('resume').value = ''; // clear file input
     } catch (err) {
-      console.error('Submission failed:', err);
-      setError('❌ Failed to submit application. Try again later.');
+      console.error("Firebase error:", err);
+      setError('❌ Failed to submit application. Check console.');
       setMessage('');
     }
   };
@@ -78,8 +87,8 @@ const ApplicationForm = () => {
             id="fullName"
             name="fullName"
             value={formData.fullName}
-            required
             onChange={handleChange}
+            required
           />
         </div>
 
@@ -90,8 +99,8 @@ const ApplicationForm = () => {
             id="email"
             name="email"
             value={formData.email}
-            required
             onChange={handleChange}
+            required
           />
         </div>
 
@@ -102,8 +111,8 @@ const ApplicationForm = () => {
             id="country"
             name="country"
             value={formData.country}
-            required
             onChange={handleChange}
+            required
           />
         </div>
 
@@ -113,8 +122,8 @@ const ApplicationForm = () => {
             id="position"
             name="position"
             value={formData.position}
-            required
             onChange={handleChange}
+            required
           >
             <option value="">—Please choose an option—</option>
             <option value="Market Research">Market Research & Product Acquisition Intern</option>
@@ -137,8 +146,8 @@ const ApplicationForm = () => {
             id="resume"
             name="resume"
             accept=".pdf,.doc,.docx"
-            required
             onChange={handleChange}
+            required
           />
         </div>
 

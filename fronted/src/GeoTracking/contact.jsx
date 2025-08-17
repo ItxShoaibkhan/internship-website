@@ -1,6 +1,8 @@
+// src/GeoTracking/contact.jsx
 import React, { useState } from "react";
-import "./contact.css";
-
+import { db } from "../firebase"; // import your firebase.js config
+import { ref, push } from "firebase/database";
+import "./contact.css"
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,62 +10,93 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
-    captcha: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("Saving...");
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const contactRef = ref(db, "contact_form");
+      await push(contactRef, {
+        ...formData,
+        createdAt: Date.now(),
       });
-      const result = await response.json();
-      alert(result.message || "Submitted successfully!");
+
+      setStatus("✅ Message saved successfully!");
+      setFormData({ name: "", company: "", email: "", phone: "", message: "" });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Submission failed.");
+      console.error(error);
+      setStatus("❌ Failed to save message.");
     }
   };
 
   return (
     <div className="contact-page">
-      <div className="contact-header">
-        <h1>Contact Us</h1>
-      </div>
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <h1>Contact Us</h1>
+      <form onSubmit={handleSubmit} className="contact-form">
         <label>
           Your Name *
-          <input type="text" name="name" required onChange={handleChange} />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </label>
+
         <label>
           Company Name
-          <input type="text" name="company" onChange={handleChange} />
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+          />
         </label>
+
         <label>
-          Email ID *
-          <input type="email" name="email" required onChange={handleChange} />
+          Email *
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </label>
+
         <label>
-          Phone Number
-          <input type="tel" name="phone" onChange={handleChange} />
+          Phone
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+          />
         </label>
+
         <label>
-          Your Question *
-          <textarea name="message" required onChange={handleChange}></textarea>
+          Message *
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
         </label>
-        <label>
-          Which is bigger, 13 or 9?
-          <input type="text" name="captcha" required onChange={handleChange} />
-        </label>
-        <button type="submit">Submit</button>
+
+        <button type="submit">Send Message</button>
       </form>
+
+      {status && <p>{status}</p>}
     </div>
   );
 }
